@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 3000
 const bodyParser = require('body-parser');
@@ -69,6 +70,11 @@ app.post('/newmessage', (req, res) => {
     res.redirect('/guestbook')
 })
 
+app.get('/ajaxmessage', (req, res) => {
+    const messages = require('./public/guestbook.json');
+
+    res.status(200).send(messages);
+})
 app.get('*', (req, res) => {
     res.status(404).sendFile(__dirname + ('/public/404error.html'))
 })
