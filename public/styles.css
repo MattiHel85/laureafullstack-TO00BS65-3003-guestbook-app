@@ -3,10 +3,21 @@
     margin: 0;
 }
 
-.navbar {
-    color: #228B22 !important;
+nav {
+    font-family: 'Courier New', sans-serif;
 }
 
-h1 {
-    color: #228B22;
+body {
+    background-color: rgb(201, 201, 163);
+}
+
+h1, footer {
+    color: #438f43fe;
+    font-weight: 500;
+    font-family: 'Courier New', sans-serif;
+}
+
+table {
+    font-weight: 600;
+    font-family: 'Courier New', sans-serif;
 }

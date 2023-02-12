@@ -23,7 +23,7 @@ app.get('/guestbook', (req, res) => {
 
     for (message of messages) {
         results +=
-        '<tr>' +
+        '<tr class="table-success">' +
         '<td>'+message.username+'</td>'+
         '<td>'+message.country+'</td>'+
         '<td>'+message.message+'</td>'+
@@ -71,10 +71,9 @@ app.post('/newmessage', (req, res) => {
 })
 
 app.get('/ajaxmessage', (req, res) => {
-    const messages = require('./public/guestbook.json');
-
-    res.status(200).send(messages);
+    res.status(200).sendFile(__dirname + '/public/ajaxform.html')
 })
+
 app.get('*', (req, res) => {
     res.status(404).sendFile(__dirname + ('/public/404error.html'))
 })
