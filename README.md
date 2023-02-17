@@ -3,3 +3,5 @@
 ## This project is deployed in Render. Here is this link to the deployed project
 ## https://say-hello-laurea-to00bs65-3003-guestbook.onrender.com/
 
+## If the link returns "not found" then please refresh the page
+
