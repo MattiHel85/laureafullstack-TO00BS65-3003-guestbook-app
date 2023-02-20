@@ -58,12 +58,17 @@ app.post('/newmessage', (req, res) => {
     const messages = require('./public/guestbook.json');
 
     const date = new Date();
-
+    // When running on my local server the 'toLocaleDateString()' function returns the date
+    // in the correct, European format dd/mm/yy but on Render (where the project is deployed)
+    // it returns the date in the US format mm/dd/yy, which I do not want. The location in Render
+    // is set to Europe so that shouldn't happen
+    // therefore I have changed the 'toLocaleDateString()' function to display the date in the UK format
+    
     messages.push({
         "username": req.body.username,
         "country": req.body.country,
         "message": req.body.message,
-        "date": date.toLocaleDateString()
+        "date": date.toLocaleDateString("en-GB")
     });
 
     let jsonStr = JSON.stringify(messages);
